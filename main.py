@@ -3,11 +3,17 @@
 import csv
 
 def read_csv():
-    return
+    lines = []
+    filename = "data.csv"
+    with open(filename, 'r') as data:
+        for line in csv.DictReader(data):
+            lines.append(line)
+    return lines
 
 def main():
     print("starting program...")
-    data = read_csv()
+    csv_data = read_csv()
+    print(csv_data)
     print("program finished.")
     
 if __name__ == '__main__':
